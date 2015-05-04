@@ -1,0 +1,90 @@
+/* Put your css in here */
+
+@import url('http://getbootstrap.com/dist/css/bootstrap.css');
+ .fieldset .form-headline {
+  padding: 0 0 12px;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #abadae;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: 36px;
+  line-height: 36px;
+  font-size: 16px;
+  font-weight: 300;
+  color: #2d373e;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 3px;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  z-index: 2;
+  position: relative;
+}
+.sub-label {
+  font-size: 11px;
+  margin-left: 2px;
+  color: grey;
+  font-style: italic;
+}
+.glyphicon.glyphicon-alert {
+  color: red;
+}
+.error {
+  margin-top: 7px;
+  margin-bottom: 10px;
+  margin-left: 7px;
+}
+.btnSubmit {
+  margin-top: 10px;
+  width: 100%;
+}
+.has-error .form-control {
+  border-color: red;
+}
+.has-success .form-control {
+  border-color: green;
+}
+.ng-focused {
+  border-color: green !important;
+  outline: 0;
+}
+.header {
+  text-align: center;
+  font-size: 24px;
+}
+.table-result td {
+  width: 50%;
+}
+div.navbar-collapse.collapse {
+  display: block;
+  overflow: hidden;
+  max-height: 0px;
+  -webkit-transition: max-height .3s ease;
+  -moz-transition: max-height .3s ease;
+  -o-transition: max-height .3s ease;
+  transition: max-height .3s ease;
+  
+}
+div.navbar-collapse.collapse.in {
+  max-height: 2000px;
+}
+ul.check {
+  list-style-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20width%3D%2214%22%20height%3D%2214%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%3Cmetadata%20id%3D%22metadata4458%22%3Eimage%2Fsvg%2Bxml%3C%2Fmetadata%3E%0A%20%3Cg%3E%0A%20%20%3Ctitle%3ELayer%201%3C%2Ftitle%3E%0A%20%20%3Cpath%20d%3D%22m10.51563%2C3.24023a0.75007%2C0.75007%200%200%200%20-0.66407%2C0.38282l-2.89453%2C4.96093l-1.33203%2C-2a0.7508%2C0.7508%200%201%200%20-1.25%2C0.83204l2.00195%2C3a0.75007%2C0.75007%200%200%200%201.27149%2C-0.03906l3.5%2C-6.00001a0.75007%2C0.75007%200%200%200%20-0.63281%2C-1.13672z%22%20id%3D%22path4135%22%20stroke-dashoffset%3D%220%22%20stroke-miterlimit%3D%224%22%20stroke-linejoin%3D%22round%22%20stroke-linecap%3D%22round%22%20stroke-width%3D%221.5%22%20fill-rule%3D%22evenodd%22%20fill%3D%22%23000000%22%20clip-rule%3D%22nonzero%22%2F%3E%0A%20%3C%2Fg%3E%0A%3C%2Fsvg%3E");
+}
+.dropdown-menu a {
+  text-align: left;
+  margin-left:-8px;
+}
+.list-group .country{
+  margin-top:-28px;
+  margin-left:35px;
+}
+.list-group .number{
+  margin-left:35px;
+}
+.list-group .info{
+ margin-top:-43px;
+  margin-left:35px;
+}
