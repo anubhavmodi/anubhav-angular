@@ -1,0 +1,17 @@
+[
+  {
+    "country": "India",
+    "number": "+91 6446789536",
+    "tollFree": true
+  },
+  {
+    "country": "United State",
+    "number": "+1 (98) 6776890",
+    "tollFree": true
+  },
+  {
+    "country": "Australia",
+    "number": "+61 56097577",
+    "tollFree": false
+  }
+]
