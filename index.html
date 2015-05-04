@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="scotchApp">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.0-rc.1/angular.js" data-semver="1.4.0-rc.1"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+  <script src="//code.angularjs.org/1.2.25/angular-mocks.js"></script>
+  <script src="//code.angularjs.org/1.2.25/angular-cookies.js"></script>
+  <script src="//code.angularjs.org/1.2.25/angular-sanitize.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+  <script src="//rawgit.com/doshprompt/bower-angular-localization/master/angular-localization.js"></script>
+<script data-require="angular-resource@1.2.7" data-semver="1.2.7" src="http://code.angularjs.org/1.2.7/angular-resource.js"></script>
+    
+  <script src="script.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+
+<!-- define angular controller -->
+
+
+<body ng-controller="mainController">
+
+  <nav class="navbar navbar-default" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+
+      <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">AngularJS</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'">
+
+      <ul class="nav navbar-nav">
+        <li><a href="#/about" data-i18n="common.about"></a>
+        </li>
+        <li><a href="#/contact" data-i18n="common.contact"></a>
+        </li>
+        <li><a href="#/" data-i18n="common.login"></a>
+        </li>
+        <li class="dropdown">
+          <a href="" data-toggle="dropdown" class="dropdown-toggle">Language<b class="caret"></b></a>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+            <li>
+              <a href="" role="menuitem" data-ng-click="setLocale('en-US')" data-i18n="common.english"></a>
+            </li>
+            <li>
+              <a href="" role="menuitem" data-ng-click="setLocale('fr-FR')" data-i18n="common.french"></a>
+            </li>
+          </ul>
+        </li>
+
+      </ul>
+
+    </div>
+    <!-- /.navbar-collapse -->
+  </nav>
+
+
+  <div id="main">
+
+    <!-- angular templating -->
+    <!-- this is where content will be injected -->
+    <div ng-view></div>
+
+  </div>
+
+  
+
+</body>
+
+</html>
