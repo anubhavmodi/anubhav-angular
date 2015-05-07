@@ -1,0 +1,14 @@
+<div class="container">
+  <h2 data-i18n="common.contact"></h2>
+  <br>
+
+  <div class="list-group">
+    <span class="glyphicon glyphicon-info-sign"></span>
+    <p class="info" data-i18n="common.contactInfo"></p>
+  </div>
+  <div class="list-group" ng-repeat="contact in contacts">
+    <a href="tel:{{contact.number}}"><span class="glyphicon glyphicon-earphone"></span>
+    <p class="list-group-item-text country">{{contact.country}}</p>
+    <p class="list-group-item-text number">{{contact.number}}</p></a>
+  </div>
+</div>
