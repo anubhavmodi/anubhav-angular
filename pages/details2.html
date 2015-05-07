@@ -1,0 +1,68 @@
+<div class="container-fluid">
+
+  <form name="myForm2" ng-hide="flag" role="form" ng-controller="detail2Controller" class="form-horizontal">
+    <fieldset class="fieldset">
+      <div class="fieldset-container">
+        <h4 class="form-headline" data-i18n="common.commdetails"></h4>
+        
+        <label for="curraddress" class="col-xs-10" data-i18n="common.curraddress"></label>
+        <div class="col-xs-12" ng-class="{'has-error': myForm2.curraddress.$invalid && myForm2.curraddress.$dirty , 'has-success': myForm2.curraddress.$valid}">
+          <input type="text" id="curraddress" placeholder="Required" class="form-control input-lg" ng-model="comm.curraddress" name="curraddress" required="required" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm2.curraddress.$invalid &&  myForm2.curraddress.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm2.curraddress.$error.required &&  myForm2.curraddress.$dirty" data-i18n="common.curraddressRequired"></span>
+        </div>
+        
+        
+        <label for="peraddress" class="col-xs-10" data-i18n="common.peraddress"></label>
+        <div class="col-xs-12" ng-class="{'has-error': myForm2.peraddress.$invalid && myForm2.peraddress.$dirty , 'has-success': myForm2.address.$valid}">
+          <input type="text" id="peraddress" placeholder="Required" class="form-control input-lg" ng-model="comm.peraddress" name="peraddress" required="required" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm2.peraddress.$invalid &&  myForm2.peraddress.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm2.peraddress.$error.required &&  myForm2.peraddress.$dirty" data-i18n="common.peraddressRequired"></span>
+        </div>
+        
+        
+        <label for="postalCode" class="col-xs-10" data-i18n="common.postalCode"></label>
+        <div class="col-xs-12" ng-class="{'has-error': myForm2.postalCode.$invalid && myForm2.postalCode.$dirty , 'has-success': myForm2.postalCode.$valid}">
+          <input type="text" id="postalCode" placeholder="Required" class="form-control input-lg" ng-model="comm.postalCode" name="postalCode" ng-pattern="/^[0-9]+$/" required="required" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm2.postalCode.$invalid &&  myForm2.postalCode.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm2.postalCode.$error.required &&  myForm2.postalCode.$dirty" data-i18n="common.postalCodeRequired"></span>
+          <span style="color:red" ng-show="!myForm2.postalCode.$error.required &&  myForm2.postalCode.$error.pattern" data-i18n="common.numberMsg"></span>
+        </div>
+        
+        
+        <label for="city" class="col-xs-8" data-i18n="common.city"></label>
+        <div class="col-xs-12" ng-class="{'has-error': myForm2.city.$invalid && myForm2.city.$dirty , 'has-success': myForm2.city.$valid}">
+          <input type="text" id="city" placeholder="Required" class="form-control input-lg" ng-model="comm.city" name="city" ng-pattern="/^[-\sa-zA-Z]+$/" required="required" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm2.city.$invalid &&  myForm2.city.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm2.city.$error.required &&  myForm2.city.$dirty" data-i18n="common.cityRequired"></span>
+          <span style="color:red" ng-show="!myForm2.city.$error.required &&  myForm2.city.$error.pattern" data-i18n="common.alphabetMsg"></span>
+        </div>
+        
+        
+        <label for="state" class="col-xs-10" data-i18n="common.state"></label>
+        <div class="col-xs-12" ng-class="{'has-error': myForm2.state.$invalid && myForm2.state.$dirty , 'has-success': myForm2.state.$valid}">
+          <input type="text" id="state" placeholder="Required" class="form-control input-lg" ng-model="comm.state" name="state" ng-pattern="/^[-\\sa-zA-Z]+$/" required="required" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm2.state.$invalid &&  myForm2.state.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm2.state.$error.required &&  myForm2.state.$dirty" data-i18n="common.stateRequired"></span>
+          <span style="color:red" ng-show="!myForm2.state.$error.required &&  myForm2.state.$error.pattern" data-i18n="common.alphabetMsg"></span>
+        </div>
+
+        
+      </div>
+      <div class="col-xs-12" style="margin-top:10px;">
+      <a href="#/details" class="btn btn-primary pull-left" data-i18n="common.back"></a>
+        <a ng-disabled="!myForm2.$valid" ng-click="submit(comm)" href="#/submit" class="btn btn-primary pull-right" data-i18n="common.submit"></a>
+      </div>
+    </fieldset>
+  </form>
+</div>
