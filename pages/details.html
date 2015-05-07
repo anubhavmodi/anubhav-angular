@@ -1,0 +1,95 @@
+<div class="container-fluid">
+
+
+  <form name="myForm" ng-hide="flag" role="form" ng-controller="detailController" class="form-horizontal">
+    <fieldset class="fieldset">
+      <div class="fieldset-container">
+        <h4 class="form-headline" data-i18n="common.personaldetails"></h4>
+        <label class="col-xs-8" data-i18n="common.title"></label>
+        <div class="col-xs-12">
+          <select type="text" ng-model="personal.title" class="form-control ">
+            <option value="" data-i18n="common.select"></option>
+            <option value="Mr." data-i18n="common.mr"></option>
+            <option value="Mrs." data-i18n="common.mrs"></option>
+          </select>
+        </div>
+        <label for="firstName" class="col-xs-10" data-i18n="common.firstName"></label>
+        <div class="col-xs-12" ng-class="{'has-error': myForm.firstName.$invalid && myForm.firstName.$dirty , 'has-success': myForm.firstName.$valid}">
+          <input type="text" id="firstName" placeholder="Required" class="form-control input-lg" ng-model="personal.firstName" name="firstName" regex-validate="namePattern" required="required" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm.firstName.$invalid &&  myForm.firstName.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm.firstName.$error.required &&  myForm.firstName.$dirty" data-i18n="common.fNameRequired"></span>
+          <span style="color:red" ng-show="!myForm.firstName.$error.required &&  myForm.firstName.$error.regexValidate" data-i18n="common.alphabetMsg"></span>
+        </div>
+
+        <div class="col-xs-12">
+          <label for="middleName" data-i18n="common.middleName"></label>
+          <label class="sub-label " data-i18n="common.ifany"></label>
+        </div>
+        <div class="col-xs-12" ng-class="{'has-error': myForm.middleName.$invalid && myForm.middleName.$dirty , 'has-success': myForm.middleName.$valid && myForm.middleName.$viewValue}">
+          <input type="text" id="middleName" value="" class="form-control" ng-model="personal.middleName" name="middleName" ng-pattern="/^[-\\sa-zA-Z]+$/" maxlength="15" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm.middleName.$invalid &&  myForm.middleName.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm.middleName.$error.pattern" data-i18n="common.alphabetMsg"></span>
+        </div>
+        <label for="lastName" class="col-xs-8" data-i18n="common.lastName"></label>
+        <div class="col-xs-12" ng-class="{'has-error': myForm.lastName.$invalid && myForm.lastName.$dirty , 'has-success': myForm.lastName.$valid}">
+          <input type="text" id="lastName" placeholder="Required" value="" class="form-control" ng-model="personal.lastName" name="lastName" regex-validate="namePattern" ng-required="true" required="required" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm.lastName.$invalid &&  myForm.lastName.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm.lastName.$error.required &&  myForm.lastName.$dirty" data-i18n="common.lNameRequired"></span>
+          <span style="color:red" ng-show="!myForm.lastName.$error.required &&  myForm.lastName.$error.regexValidate" data-i18n="common.alphabetMsg"></span>
+        </div>
+        <div class="col-xs-12">
+          <label for="altName" data-i18n="common.altName"></label>
+          <label class="sub-label" data-i18n="common.ifany"></label>
+        </div>
+        <div class="col-xs-12" ng-class="{'has-error': myForm.alternateName.$invalid && myForm.alternateName.$dirty , 'has-success': myForm.alternateName.$valid && myForm.alternateName.$viewValue}">
+          <input type="text" id="altName" value="" class="form-control" ng-model="personal.alternateName" name="alternateName" ng-pattern="/^[-\\sa-zA-Z]+$/" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm.alternateName.$invalid &&  myForm.alternateName.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm.alternateName.$error.pattern" data-i18n="common.alphabetMsg"></span>
+        </div>
+
+        <label for="phoneNumber" class="col-xs-12" data-i18n="common.phoneNumber"></label>
+        <div class="col-xs-12">
+          <select type="text" ng-model="personal.type1" class="form-control " ng-focus>
+            <option value="" data-i18n="common.select"></option>
+            <option value="Work" data-i18n="common.work"></option>
+            <option value="Home" data-i18n="common.home"></option>
+          </select>
+        </div>
+        <div class="col-xs-12" style="margin-top:5px;" ng-class="{'has-error': myForm.phoneNumber.$invalid && myForm.phoneNumber.$dirty , 'has-success': myForm.phoneNumber.$valid && myForm.phoneNumber.$viewValue}">
+          <input type="text" id="phoneNumber" value="" class="form-control input-lg" ng-model="personal.phoneNumber" name="phoneNumber" ng-pattern="/^(?=\d{10}$)0[89]\d{8}/" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm.phoneNumber.$invalid &&  myForm.phoneNumber.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm.phoneNumber.$error.pattern" data-i18n="common.phoneMsg"></span>
+        </div>
+        <label for="phoneNumber2" class="col-xs-12" data-i18n="common.phoneNumber2"></label>
+        <div class="col-xs-12">
+          <select type="text" ng-model="personal.type2" class="form-control ">
+            <option value="" data-i18n="common.select"></option>
+            <option value="Work" data-i18n="common.work"></option>
+            <option value="Home" data-i18n="common.home"></option>
+          </select>
+        </div>
+        <div class="col-xs-12" style="margin-top:5px;" ng-class="{'has-error': myForm.phoneNumber2.$invalid && myForm.phoneNumber2.$dirty , 'has-success': myForm.phoneNumber2.$valid && myForm.phoneNumber2.$viewValue}">
+          <input type="text" id="phoneNumber2" value="" class="form-control" ng-model="personal.phoneNumber2" name="phoneNumber2" ng-pattern="/^(?=\d{10}$)0[89]\d{8}/" ng-focus />
+        </div>
+        <div class="col-xs-12 error" ng-show="myForm.phoneNumber2.$invalid &&  myForm.phoneNuber2.$dirty">
+          <span class="glyphicon glyphicon-alert"></span>
+          <span style="color:red" ng-show="myForm.phoneNumber2.$error.pattern" data-i18n="common.phoneMsg"></span>
+        </div>
+      </div>
+      <div class="col-xs-12" style="margin-top:10px;">
+      <a href="#/" class="btn btn-primary pull-left" data-i18n="common.back"></a>
+        <a ng-disabled="!myForm.$valid" ng-click="continue(personal)" href="#/details2" class="btn btn-primary pull-right" data-i18n="common.continue"></a>
+      </div>
+    </fieldset>
+  </form>
+</div>
